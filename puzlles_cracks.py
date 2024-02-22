@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-# Author: A_Dizzle
-# Date: 04/02/2018
-# 1FLAMEN6 Puzzle Decoder https://twitter.com/coin_artist/status/583979278238359552
+# Author: N_V_NAIDU
+# Date: 22/02/2024
+# Level 5 Puzzle by Zden Puzzle Decoder https://twitter.com/Zd3N/status/1060955171591766018
 
 import math
 
@@ -13,16 +13,14 @@ def string_decode(input, length=8):
 
 key = "011010"
 
-# 4-bit Flame encoded Chunks
+# Sum of two consecutive following rectangles areas creates one byte of the private key
 # short (0) or tall (1)
-# yellow (0) or red (1) border
 # narrow (0) or wide (1)
-# purple (0) or green (1) interior
 
 # Read clockwise around the picture frame from inside edge starting from the top left
 # once a full loop is made continue on the outer edge counter-clockwise
 
-flames = [
+rectangles = [
 	"0010", # Top Inner (left -> right)
 	"1011",
 	"1001",
@@ -181,7 +179,7 @@ flames = [
 
 data = ""
 
-for x in flames:
+for x in rectangels:
 	data = data + x
 
 # Generate XOR binary string
